@@ -7,7 +7,6 @@ export function maxZeroSequence(array) {
         if (typeof arrayVal == "object") arrayFound.push(arrayVal);
         arrayCopy.shift();
     }
-    console.log(arrayFound)
     return arrayFound.sort((a,b)=>b.length-a.length)[0]
 }
 
@@ -22,4 +21,3 @@ function processCurrentArray(arrayCopy) {
     }
 }
 
-console.log(maxZeroSequence([1, 2, -3, 7, 8, -16]))

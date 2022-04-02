@@ -20,4 +20,3 @@ function mapDirNum(arrayNum) {
     return arrayNum;
 }
 
-console.log(dirReduc(["NORD","SUD","SUD","EST","OUEST","NORD","OUEST"]))

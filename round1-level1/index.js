@@ -9,5 +9,3 @@ export function howManyGifts(n, array) {
     }
     return counter
 }
-
-console.log(howManyGifts(20, [13, 2, 4, 6, 1]))
