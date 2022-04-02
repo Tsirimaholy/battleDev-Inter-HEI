@@ -1,22 +1,24 @@
 export function maxZeroSequence(array) {
     let arrayFound = [];
-    let arrayCopy = [...array];
     while (true) {
-        if (arrayCopy.length <= 0) break
-        let arrayVal = processCurrentArray(arrayCopy)
-        if (typeof arrayVal == "object") arrayFound.push(arrayVal);
-        arrayCopy.shift();
+        if (array.length <= 0) return arrayFound
+        let arrayVal = processCurrentArray(array)
+        if ((typeof arrayVal == "object") && (arrayVal.length > arrayFound.length)) arrayFound = (arrayVal);
+        array.shift();
     }
-    return arrayFound.sort((a,b)=>b.length-a.length)[0]
 }
 
-function processCurrentArray(arrayCopy) {
-    let copy = [...arrayCopy];
+/**
+ * Check if a sequence of a given array will sum up to zero(0)
+ * @param{Array} array
+ * @return{Array} The array sequence
+ * */
+function processCurrentArray(array) {
+    let copy = [...array];
     while (copy.length > 0) {
         let sum = copy.reduce((previousValue, nextValue) => previousValue + nextValue);
-        if (sum === 0) {
+        if (sum === 0)
             return copy
-        }
         copy.pop();
     }
 }
