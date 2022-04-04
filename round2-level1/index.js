@@ -1,11 +1,10 @@
-function swapCase(char) {
-    char = char.split(" ")
-    char.forEach((val) => swapWordCase(val))
-    return char.join(" ")
-}
+export function spongeMeme(char) {
+    char = char.toLowerCase()
+    char = char.split("")
+    for (let i = 0; i < char.length; i += 2) {
+        let element = char[i];
+        char[i] = element.toUpperCase()
+    }
 
-function swapWordCase(words) {
-    return (words.split("")).map(
-        e => (/[A-Z]/.test(e)) ? e.toLowerCase() : e.toUpperCase()
-    ).join("")
+    return char.join("")
 }
